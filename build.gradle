@@ -1,0 +1,38 @@
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+
+    }
+}
+plugins {
+    id 'java'
+}
+group 'it.evolvere'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'postgresql', name: 'postgresql', version: '9.1-901.jdbc4'
+}
+
+apply plugin: 'java'
+apply plugin: 'javafx-gradle-plugin'
+
+
+jfx {
+    mainClass = 'it.evolvere.Biblioteca'
+
+    // minimal requirement for jfxNative-task
+    vendor = 'Evolvere'
+}

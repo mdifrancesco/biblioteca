@@ -1,0 +1,7 @@
+.button {
+    -fx-font-weight: bold;
+}
+
+.pane{
+    -fx-background-color: linear-gradient(to bottom, #b0d4e3 0%,#88bacf 100%);
+}
