@@ -1,9 +1,11 @@
 package it.evolvere.controller;
 
 import it.evolvere.dao.LibroDao;
+import it.evolvere.dao.UtenteDao;
 import it.evolvere.factory.ConnectionFactory;
 import it.evolvere.factory.DaoFactory;
 import it.evolvere.model.Libro;
+import it.evolvere.model.Utente;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -11,6 +13,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class BibliotecaController {
@@ -18,7 +21,7 @@ public class BibliotecaController {
     private DaoFactory daoFactory;
 
     @FXML
-    private Label label;
+    private Label gnazio;
 
     @FXML private ListView<Libro> libri;
 
@@ -41,14 +44,25 @@ public class BibliotecaController {
     public void initialize() {
         String javaVersion = System.getProperty("java.version");
         String javafxVersion = System.getProperty("javafx.version");
-        label.setText("Hello, JavaFX " + javafxVersion + "\nRunning on Java " + javaVersion + ".");
+        gnazio.setText("Hello, JavaFX " + javafxVersion + "\nRunning on Java " + javaVersion + ".");
 
-        DaoFactory daoFactory = new DaoFactory(ConnectionFactory.getConnection());
+        Connection connection = ConnectionFactory.getConnection();
+
+        //1. Pattern Factory:
+
+
+
+        //Data Access Object (D.A.O.)
+        DaoFactory daoFactory = new DaoFactory(connection);
         LibroDao libroDao = (LibroDao) daoFactory.getDao(DaoFactory.LIBRO);
+        UtenteDao utenteDao = (UtenteDao) daoFactory.getDao(DaoFactory.UTENTE);
 
         List<Libro> list = libroDao.findByName("");
         for(Libro libro : list){
             libri.getItems().add(libro);
         }
+
+        List<Utente> listUtenti = utenteDao.findByName("");
+        System.out.println(listUtenti.size());
     }
 }

@@ -1,5 +1,7 @@
 package it.evolvere;
 
+import it.evolvere.factory.ConnectionFactory;
+import it.evolvere.model.Libro;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,6 +26,10 @@ public class Biblioteca extends Application {
 
         primaryStage.setTitle("Biblioteca");
         primaryStage.setScene(scene);
+
+
+
+        ConnectionFactory.getConnection();  //metodo di Classe!!!!!
 
         primaryStage.show();
     }

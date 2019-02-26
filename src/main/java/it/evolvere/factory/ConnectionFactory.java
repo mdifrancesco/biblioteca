@@ -8,8 +8,8 @@ public class ConnectionFactory {
 
 
     public static final String URL = "jdbc:postgresql://127.0.0.1:5432/biblioteca";
-    public static final String USER = "postgres";
-    public static final String PASS = "agile";
+    public static final String USER = "biblioteca";
+    public static final String PASS = "biblioteca";
 
     private static Connection connection;
 

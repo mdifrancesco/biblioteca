@@ -2,6 +2,9 @@ package it.evolvere.model;
 
 public class Libro {
 
+    public static void ciaoSonoUnMedotoDiIstanza(){
+        System.out.println("ciao sono un metodo di istanza");
+    }
     private Long id;
 
     private String codice;
