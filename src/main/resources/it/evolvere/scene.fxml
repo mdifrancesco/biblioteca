@@ -25,32 +25,37 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
+            <RowConstraints maxHeight="0.0" minHeight="10.0" percentHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="0.0" minHeight="10.0" percentHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="5.0" prefHeight="0.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="5.0" prefHeight="0.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="10.0" prefHeight="0.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="5.0" prefHeight="0.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="10.0" prefHeight="0.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="5.0" prefHeight="0.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="10.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="55.0" minHeight="0.0" percentHeight="7.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="0.0" percentHeight="5.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="7.0" prefHeight="0.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="5.0" prefHeight="0.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="35.0" minHeight="0.0" percentHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="7.0" prefHeight="0.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="5.0" prefHeight="0.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="10.0" prefHeight="0.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="10.0" prefHeight="0.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="10.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="35.0" minHeight="0.0" percentHeight="7.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="5.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="7.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="7.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="0.0" minHeight="0.0" percentHeight="7.0" prefHeight="0.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ListView fx:id="libri" onMouseClicked="#selezionaLibro" prefHeight="265.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="10" />
-            <TextField fx:id="categoria" layoutX="310.0" layoutY="235.0" prefHeight="39.0" prefWidth="249.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="6" />
+            <ListView fx:id="libri" onMouseClicked="#selezionaLibro" prefHeight="265.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="12" />
+            <TextField fx:id="categoria" layoutX="310.0" layoutY="235.0" prefHeight="39.0" prefWidth="249.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="8" />
             <TextField fx:id="codice" layoutX="310.0" layoutY="187.0" prefHeight="39.0" prefWidth="249.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="4" />
             <TextField fx:id="titolo" layoutX="310.0" layoutY="139.0" prefHeight="39.0" prefWidth="249.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="2" />
-            <TextArea fx:id="descrizione" prefHeight="60.0" prefWidth="259.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="8" GridPane.rowSpan="2" />
-            <Button id="salva" mnemonicParsing="false" prefHeight="39.0" prefWidth="145.0" text="Salva" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
-            <Label fx:id="gnazio" prefHeight="38.0" prefWidth="212.0" text="Label" GridPane.columnIndex="6" GridPane.columnSpan="3" GridPane.rowIndex="12" />
+            <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="6" />
+            <TextArea fx:id="descrizione" prefHeight="60.0" prefWidth="259.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="10" GridPane.rowSpan="2" />
+            <Button id="salva" mnemonicParsing="false" prefHeight="39.0" prefWidth="145.0" text="Salva" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="12" GridPane.valignment="CENTER" />
+            <Label fx:id="gnazio" prefHeight="38.0" prefWidth="212.0" text="Label" GridPane.columnIndex="6" GridPane.columnSpan="3" GridPane.rowIndex="14" />
             <Label text="Libri:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Autore" GridPane.columnIndex="5" GridPane.rowIndex="5" />
             <Label layoutX="490.0" layoutY="42.0" text="Codice" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <Label layoutX="490.0" layoutY="132.0" text="Categoria" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-            <Label layoutX="490.0" layoutY="222.0" text="Autore" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+            <Label layoutX="490.0" layoutY="132.0" text="Categoria" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+            <Label layoutX="490.0" layoutY="222.0" text="Descrizione" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+            <Label text="Titolo" GridPane.columnIndex="5" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>

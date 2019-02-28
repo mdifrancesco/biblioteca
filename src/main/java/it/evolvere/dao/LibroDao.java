@@ -71,7 +71,11 @@ public class LibroDao extends AbstractDao<Libro> {
         String titolo = rs.getString("titolo");
         String autore = rs.getString("autore");
         String descrizione = rs.getString("descrizione");
+        String codice = rs.getString("codice");
+        String categoria = rs.getString("categoria");
         Libro l = new Libro(id, titolo, descrizione, autore);
+        l.setCodice(codice);
+        l.setCategoria(categoria);
         return l;
     }
 }

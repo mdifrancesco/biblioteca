@@ -17,6 +17,7 @@ public class Biblioteca extends Application {
     public static void main(String[] args) {
         Biblioteca.launch(args);
     }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("scene.fxml"));
@@ -26,10 +27,6 @@ public class Biblioteca extends Application {
 
         primaryStage.setTitle("Biblioteca");
         primaryStage.setScene(scene);
-
-
-
-        ConnectionFactory.getConnection();  //metodo di Classe!!!!!
 
         primaryStage.show();
     }
