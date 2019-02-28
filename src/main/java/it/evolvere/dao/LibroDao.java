@@ -19,7 +19,31 @@ public class LibroDao extends AbstractDao<Libro> {
 
     @Override
     public Long add(Libro libro) {
-        return null;
+        String query = "insert into libro (titolo, autore, categoria, codice, descrizione) values(?,?,?,?,?)";
+        String queryRecuperoLibro = "select * from libro where codice = ?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1,libro.getTitolo());
+            statement.setString(2,libro.getAutore());
+            statement.setString(3,libro.getCategoria());
+            statement.setString(4,libro.getCodice());
+            statement.setString(5,libro.getDescrizione());
+
+            statement.execute();
+            statement.close();
+
+            statement = connection.prepareStatement(queryRecuperoLibro);
+            statement.setString(1, libro.getCodice());
+            ResultSet rs = statement.executeQuery();
+            if(rs.next()){
+                long id = rs.getLong("id");
+                libro.setId(id);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return libro.getId();
     }
 
     @Override

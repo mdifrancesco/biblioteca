@@ -53,6 +53,33 @@ public class BibliotecaController {
         descrizione.setText("");
     }
 
+    @FXML
+    private void salvaLibro(){
+        System.out.println("CIAO!!!");
+        String autoreString = autore.getText();
+        String titoloString = titolo.getText();
+        String descrizioneString = descrizione.getText();
+        String categoriaString = categoria.getText();
+        String codiceString = codice.getText();
+
+        Libro nuovoLibro = new Libro(0L,
+                titoloString,
+                descrizioneString,
+                autoreString);
+
+        nuovoLibro.setCategoria(categoriaString);
+        nuovoLibro.setCodice(codiceString);
+
+        Connection connection = ConnectionFactory.getConnection();
+        DaoFactory daoFactory = new DaoFactory(connection);
+        LibroDao libroDao = (LibroDao) daoFactory.getDao(DaoFactory.LIBRO);
+        long id = libroDao.add(nuovoLibro);
+
+        nuovoLibro.setId(id);
+        libri.getItems().add(nuovoLibro);
+        libri.refresh();
+    }
+
     public void initialize() {
         String javaVersion = System.getProperty("java.version");
         String javafxVersion = System.getProperty("javafx.version");
