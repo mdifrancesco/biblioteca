@@ -31,6 +31,8 @@ public class BibliotecaController {
 
     @FXML private TextField titolo;
 
+    @FXML private TextField autore;
+
     @FXML private TextArea descrizione;
 
     @FXML private void selezionaLibro(MouseEvent event){
@@ -38,7 +40,17 @@ public class BibliotecaController {
         categoria.setText(libro.getCategoria());
         codice.setText(libro.getCodice());
         titolo.setText(libro.getTitolo());
+        autore.setText(libro.getAutore());
         descrizione.setText(libro.getDescrizione());
+    }
+
+    @FXML
+    private void aggiungiLibro(){
+        categoria.setText("");
+        codice.setText("");
+        titolo.setText("");
+        autore.setText("");
+        descrizione.setText("");
     }
 
     public void initialize() {
