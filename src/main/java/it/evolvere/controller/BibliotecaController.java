@@ -5,6 +5,7 @@ import it.evolvere.dao.UtenteDao;
 import it.evolvere.factory.ConnectionFactory;
 import it.evolvere.factory.DaoFactory;
 import it.evolvere.model.AmministratoreSingleton;
+import it.evolvere.model.Autore;
 import it.evolvere.model.Libro;
 import it.evolvere.model.Utente;
 import javafx.fxml.FXML;
@@ -15,7 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 import java.sql.Connection;
-import java.util.List;
+import java.util.*;
 
 public class BibliotecaController {
 
@@ -104,5 +105,37 @@ public class BibliotecaController {
 
         List<Utente> listUtenti = utenteDao.findByName("");
         System.out.println(listUtenti.size());
+
+        Autore a = new Autore(1L, "Alessandro", "Manzoni");
+
+        List<Autore> autori;
+        autori = new ArrayList<>();
+        autori.add(a);
+        autori.add(a); //lo riaggiunge perchè non si preoccupa di gestire le duplicazioni
+        autori.get(0);
+        autori.remove(a);
+        autori.clear();
+        autori.size();
+
+
+        Map<String, Autore> mappa;
+        mappa = new HashMap<>();
+        mappa.put("MNZ....", a);
+        mappa.put("DFR....", a);
+        mappa.get("MNZ....");
+        mappa.isEmpty();
+        mappa.remove("MNZ....");
+        mappa.size();
+
+
+        Map<Integer,Long> mappaPossibile;
+        mappaPossibile = new HashMap<>();
+
+        Map<Map<Integer,Integer>, Utente> mappaDiMappa;
+
+
+        Set<Autore> set = new HashSet<>();
+        set.add(a);
+        set.add(a); //non lo riaggiunge perchè già presente
     }
 }
