@@ -26,8 +26,8 @@ public class UtenteDao extends AbstractDao<Utente>{
     }
 
     @Override
-    public void remove(Utente utente) {
-
+    public boolean remove(Utente utente) {
+        return false;
     }
 
     @Override

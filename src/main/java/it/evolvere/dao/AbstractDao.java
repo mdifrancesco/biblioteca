@@ -15,7 +15,7 @@ public abstract class AbstractDao<T> {
 
     public abstract Long add(T t);
 
-    public abstract void remove(T t);
+    public abstract boolean remove(T t);
 
     public abstract Long update(T t);
 

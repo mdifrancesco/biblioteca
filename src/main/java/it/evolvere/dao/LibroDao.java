@@ -47,13 +47,38 @@ public class LibroDao extends AbstractDao<Libro> {
     }
 
     @Override
-    public void remove(Libro libro) {
-
+    public boolean remove(Libro libro) {
+        String query = "DELETE FROM libro WHERE id = ?";
+        boolean result = false;
+        try {
+            PreparedStatement st = connection.prepareStatement(query);
+            st.setLong(1,libro.getId());
+            result = st.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
     public Long update(Libro libro) {
-        return null;
+        long ris=0;
+        String query = "UPDATE libro SET titolo=?, autore=?, categoria=?, codice=?, descrizione=? WHERE id=?";
+        try {
+            PreparedStatement st = connection.prepareStatement(query);
+            st.setString(1,libro.getTitolo());
+            st.setString(2,libro.getAutore());
+            st.setString(3,libro.getCategoria());
+            st.setString(4,libro.getCodice());
+            st.setString(5,libro.getDescrizione());
+            st.setLong(6, libro.getId());
+
+            ris = st.executeUpdate();
+            st.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ris;
     }
 
     @Override

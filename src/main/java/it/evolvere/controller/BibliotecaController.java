@@ -47,17 +47,53 @@ public class BibliotecaController {
     }
 
     @FXML
+    private void cancella(){
+        Libro libro = libri.getSelectionModel().getSelectedItem();
+
+        Connection connection = ConnectionFactory.getConnection();
+        DaoFactory daoFactory = new DaoFactory(connection);
+        LibroDao libroDao = (LibroDao) daoFactory.getDao(DaoFactory.LIBRO);
+        if(libro != null){
+            boolean risultato = libroDao.remove(libro);
+            libri.getItems().remove(libro);
+        }
+    }
+
+
+    private void aggiorna(){
+        Libro libro = libri.getSelectionModel().getSelectedItem();
+        Connection connection = ConnectionFactory.getConnection();
+        DaoFactory daoFactory = new DaoFactory(connection);
+        LibroDao libroDao = (LibroDao) daoFactory.getDao(DaoFactory.LIBRO);
+
+        libro.setCategoria(categoria.getText());
+        libro.setCodice(codice.getText());
+        libro.setDescrizione(descrizione.getText());
+        libro.setAutore(autore.getText());
+        libro.setTitolo(titolo.getText());
+
+        libroDao.update(libro);
+        libri.refresh();
+    }
+
+    @FXML
     private void aggiungiLibro(){
         categoria.setText("");
         codice.setText("");
         titolo.setText("");
         autore.setText("");
         descrizione.setText("");
+        libri.getSelectionModel().clearSelection();
     }
+
 
     @FXML
     private void salvaLibro(){
-        System.out.println("CIAO!!!");
+        Libro l = libri.getSelectionModel().getSelectedItem();
+        if(l != null){
+            aggiorna();
+            return;
+        }
         String autoreString = autore.getText();
         String titoloString = titolo.getText();
         String descrizioneString = descrizione.getText();
